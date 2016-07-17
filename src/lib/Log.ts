@@ -115,7 +115,7 @@ class Log
 	 * @mthod dirxml
 	 * @param {any} [value]
 	 */
-	public dirxml:(value?:any) => void
+	public dirxml:(value?:any) => void;
 
 	/**
 	 * Similar to {{#crossLink "temple.utils.log.Log/log:method"}}log{{/crossLink}},
@@ -125,7 +125,7 @@ class Log
 	 * @method error
 	 * @param {any} [items]
 	 */
-	public error:(...items:Array<any>) => void
+	public error:(...items:Array<any>) => void;
 
 	/**
 	 * This method is identical to {{#crossLink "temple.utils.log.Log/log:method"}}log{{/crossLink}}.
