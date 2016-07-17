@@ -45,12 +45,12 @@ describe('Log', () =>
 	{
 		const namespace = 'test';
 		const L = new Log(namespace);
-		const stub = sinon.spy(L, 'log');
+		//const stub = sinon.spy(L, 'log');
 
-		console.log(L);
+		console.log('oohh yes', L.log('T'));
 		it('slog method should be called', () =>
 		{
-			L.log('T');
+			//L.log('T');
 
 			//expect(stub).to.have.been.called;
 		});

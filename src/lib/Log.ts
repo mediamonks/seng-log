@@ -68,6 +68,7 @@ let _cachedGlobRegExp:RegExp;
  */
 class Log
 {
+
 	private static defaultFeatures:ILogFeatures = {
 		showNamespaceString: true,
 		time: false,
@@ -75,6 +76,104 @@ class Log
 		timeDiff: false,
 		color: '#8c8c8c'
 	};
+
+	/**
+	 * Note: these methods are stubs. They are replaced when Log is initialized. They're here to provide proper typing
+	 * to the compiler.
+	 */
+
+	/**
+	 * Writes the the number of times that `count()` has been invoked at the same line and with the same label.
+	 *
+	 * @method count
+	 * @param {string} [countTitle]
+	 */
+	public count:(countTitle?:string) => void;
+
+	/**
+	 * This method is identical to {{#crossLink "temple.utils.log.Log/log:method"}}log{{/crossLink}}.
+	 *
+	 * @method debug
+	 * @param {any} [items]
+	 */
+	public debug:(items?:any) => void;
+
+	/**
+	 * Prints a JavaScript representation of the specified object. If the object being logged is an HTML element, then
+	 * the properties of its DOM representation are displayed.
+	 *
+	 * @method dir
+	 * @param {any} [value]
+	 */
+	public dir:(value?:any) => void;
+
+	/**
+	 * Prints an XML representation of the specified object, as it would appear in the Elements panel. For HTML
+	 * elements, calling this method is equivalent to calling
+	 * {{#crossLink "temple.utils.log.Log/log:method"}}log{{/crossLink}}.
+	 *
+	 * @mthod dirxml
+	 * @param {any} [value]
+	 */
+	public dirxml:(value?:any) => void
+
+	/**
+	 * Similar to {{#crossLink "temple.utils.log.Log/log:method"}}log{{/crossLink}},
+	 * {{#crossLink "temple.utils.log.Log/error:method"}}error{{/crossLink}} and also includes a stack trace from where
+	 * the method was called.
+	 *
+	 * @method error
+	 * @param {any} [items]
+	 */
+	public error:(...items:Array<any>) => void
+
+	/**
+	 * This method is identical to {{#crossLink "temple.utils.log.Log/log:method"}}log{{/crossLink}}.
+	 *
+	 * @method info
+	 * @param {any} [items]
+	 */
+	public info:(...items:Array<any>) => void;
+
+	/**
+	 * Displays a message in the console. You pass one or more objects to this method, each of which are evaluated and
+	 * concatenated into a space-delimited string. The first parameter you pass to `log()` may contain format
+	 * specifiers, a string token composed of the percent sign (%) followed by a letter that indicates the formatting
+	 * to be applied.
+	 *
+	 * @method log
+	 * @param {any} [items]
+	 */
+	public log:(...items:Array<any>) => void;
+
+	/**
+	 * Prints a stack trace from the point where the method was called, including links to the specific lines in the
+	 * JavaScript source. A counter indicates the number of times that trace() method was invoked at that point, as
+	 * shown in the screen shot below.
+	 *
+	 * @method trace
+	 */
+	public trace:() => void;
+
+	/**
+	 * This method is like {{#crossLink "temple.utils.log.Log/log:method"}}log{{/crossLink}} but also displays a
+	 * yellow warning icon along with the logged message.
+	 *
+	 * @method warn
+	 * @param {any} [items]
+	 */
+	public warn:(...items:Array<any>) => void;
+
+	/**
+	 * The amount of milliseconds since the last log call
+	 *
+	 * @private
+	 * @property {number} _lastLogTime
+	 */
+	private _lastLogTime:number;
+
+	private _features:ILogFeatures;
+	private _namespace:string;
 
 	/**
 	 * Add a namespace to the cookie
@@ -362,17 +461,6 @@ class Log
 		return consoleNsString;
 	}
 
-	/**
-	 * The amount of milliseconds since the last log call
-	 *
-	 * @private
-	 * @property {number} _lastLogTime
-	 */
-	private _lastLogTime:number;
-
-	private _features:ILogFeatures;
-	private _namespace:string;
-
 	constructor(namespace:string, features?:ILogFeatures)
 	{
 		this._namespace = namespace;
@@ -396,111 +484,6 @@ class Log
 	public setNamespace(namespace:string):void
 	{
 		this._namespace = namespace;
-	}
-
-	/**
-	 * Note: these methods are stubs. They are replaced when Log is initialized. They're here to provide proper typing
-	 * to the compiler.
-	 */
-
-	/**
-	 * Writes the the number of times that `count()` has been invoked at the same line and with the same label.
-	 *
-	 * @method count
-	 * @param {string} [countTitle]
-	 */
-	public count(countTitle?:string):void
-	{
-	}
-
-	/**
-	 * This method is identical to {{#crossLink "temple.utils.log.Log/log:method"}}log{{/crossLink}}.
-	 *
-	 * @method debug
-	 * @param {any} [items]
-	 */
-	public debug(items?:any):void
-	{
-	}
-
-	/**
-	 * Prints a JavaScript representation of the specified object. If the object being logged is an HTML element, then
-	 * the properties of its DOM representation are displayed.
-	 *
-	 * @method dir
-	 * @param {any} [value]
-	 */
-	public dir(value?:any):void
-	{
-	}
-
-	/**
-	 * Prints an XML representation of the specified object, as it would appear in the Elements panel. For HTML
-	 * elements, calling this method is equivalent to calling
-	 * {{#crossLink "temple.utils.log.Log/log:method"}}log{{/crossLink}}.
-	 *
-	 * @mthod dirxml
-	 * @param {any} [value]
-	 */
-	public dirxml(value?:any):void
-	{
-	}
-
-	/**
-	 * Similar to {{#crossLink "temple.utils.log.Log/log:method"}}log{{/crossLink}},
-	 * {{#crossLink "temple.utils.log.Log/error:method"}}error{{/crossLink}} and also includes a stack trace from where
-	 * the method was called.
-	 *
-	 * @method error
-	 * @param {any} [items]
-	 */
-	public error(...items:Array<any>):void
-	{
-	}
-
-	/**
-	 * This method is identical to {{#crossLink "temple.utils.log.Log/log:method"}}log{{/crossLink}}.
-	 *
-	 * @method info
-	 * @param {any} [items]
-	 */
-	public info(...items:Array<any>):void
-	{
-	}
-
-	/**
-	 * Displays a message in the console. You pass one or more objects to this method, each of which are evaluated and
-	 * concatenated into a space-delimited string. The first parameter you pass to `log()` may contain format
-	 * specifiers, a string token composed of the percent sign (%) followed by a letter that indicates the formatting
-	 * to be applied.
-	 *
-	 * @method log
-	 * @param {any} [items]
-	 */
-	public log(...items:Array<any>):void
-	{
-	}
-
-	/**
-	 * Prints a stack trace from the point where the method was called, including links to the specific lines in the
-	 * JavaScript source. A counter indicates the number of times that trace() method was invoked at that point, as
-	 * shown in the screen shot below.
-	 *
-	 * @method trace
-	 */
-	public trace():void
-	{
-	}
-
-	/**
-	 * This method is like {{#crossLink "temple.utils.log.Log/log:method"}}log{{/crossLink}} but also displays a
-	 * yellow warning icon along with the logged message.
-	 *
-	 * @method warn
-	 * @param {any} [items]
-	 */
-	public warn(...items:Array<any>):void
-	{
 	}
 
 	/**
