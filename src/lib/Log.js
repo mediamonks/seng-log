@@ -1,5 +1,5 @@
 "use strict";
-var js_cookie_1 = require('js-cookie');
+var Cookies = require('js-cookie');
 var padStart_1 = require('lodash/padStart');
 /**
  * The name of the cookie to check
@@ -82,10 +82,10 @@ var Log = (function () {
      */
     Log.addNamespaceToCookie = function (namespace) {
         if (Log.getCookieValue() == void 0) {
-            js_cookie_1.default.set(_cookieName, namespace);
+            Cookies.set(_cookieName, namespace);
             return;
         }
-        js_cookie_1.default.set(_cookieName, js_cookie_1.default.get(_cookieName) + '|' + namespace);
+        Cookies.set(_cookieName, Cookies.get(_cookieName) + '|' + namespace);
     };
     /**
      * Static method for calling console.log under a certain namespace, useful for one-off logs
@@ -173,7 +173,7 @@ var Log = (function () {
      * @returns {string}
      */
     Log.getCookieValue = function () {
-        return js_cookie_1.default.get(_cookieName);
+        return Cookies.get(_cookieName);
     };
     /**
      * Directly sets the value of the cookie and overwrites the current value
@@ -183,7 +183,7 @@ var Log = (function () {
      * @param value
      */
     Log.setCookieValue = function (value) {
-        return js_cookie_1.default.set(_cookieName, value);
+        return Cookies.set(_cookieName, value);
     };
     /**
      * Clears the cookie
@@ -192,7 +192,7 @@ var Log = (function () {
      * @method removeAllNamespaces
      */
     Log.removeAllNamespaces = function () {
-        js_cookie_1.default.remove(_cookieName);
+        Cookies.remove(_cookieName);
     };
     /**
      * returns an array of registered namespaces
@@ -252,7 +252,7 @@ var Log = (function () {
      * @returns {boolean}
      */
     Log.checkCookieAgainstNamespace = function (namespace) {
-        var cookieValue = js_cookie_1.default.get(_cookieName);
+        var cookieValue = Cookies.get(_cookieName);
         if (cookieValue == void 0) {
             return false;
         }

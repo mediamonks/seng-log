@@ -1,4 +1,4 @@
-import Cookies from 'js-cookie';
+import * as Cookies from 'js-cookie';
 import padStart from 'lodash/padStart';
 import ILogFeatures from "./ILogFeatures";
 
@@ -90,6 +90,7 @@ class Log
 			Cookies.set(_cookieName, namespace);
 			return;
 		}
+
 
 		Cookies.set(_cookieName, Cookies.get(_cookieName) + '|' + namespace);
 	}

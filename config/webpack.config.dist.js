@@ -8,10 +8,10 @@ module.exports = function()
 		resolve: {
 			extensions: ['', '.ts', '.js']
 		},
+
 		// entry is the "main" source file we want to include/import
-		entry: [
-			'./src/index.ts'
-		],
+		entry: './src/bundle.ts',
+
 		// externals let you tell webpack about external dependencies
 		// that shouldn't be resolved by webpack.
 		externals: [
@@ -28,22 +28,28 @@ module.exports = function()
 				//}
 			}
 		],
+
 		// output tells webpack where to put the bundle it creates
 		output: {
 			// in the case of a "plain global browser library", this
 			// will be used as the reference to our module that is
 			// hung off of the window object.
-			library: "SengLog"
+			library: "SengBoilerplate"
 		},
+
 		module: {
 			loaders: [
 				{
 					test: /\.ts$/,
 					exclude: /node_modules/,
-					loader: 'ts'
+					loader: 'awesome-typescript-loader',
+					query: {
+						tsconfig: 'config/tsconfig.webpack.json'
+					}
 				}
 			]
 		},
+
 		plugins: [],
 		stats: {
 			colors: true

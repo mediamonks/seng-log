@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
     "module": "commonjs",
     "moduleResolution": "node",
     "target": "es5",
@@ -9,13 +8,12 @@
     "preserveConstEnums": true,
     "noImplicitAny": false,
     "removeComments": false,
+    "noEmitHelpers": true,
     "sourceMap": false,
     "inlineSourceMap": false,
     "outDir": "./"
   },
   "files": [
-    "./typings/index.d.ts",
-    "./src/index.ts",
-    "./src/lib/Log.ts"
+    "typings/index.d.ts"
   ]
 }
