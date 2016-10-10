@@ -6,7 +6,29 @@
 
 # seng-log
 
-Add a description here...
+  Provides a namespaced debugging utility that exposes common Console functions (e.g. log, error, warn, etc). Every
+  instance of Log should be given a namespace string (e.g. `MyApp.MyUtility.SomeComponent`). When a Console method is
+  called, Log will first read the cookie `__debug__` and check if the namespace matches the cookie value. When the
+  cookie matches the namespace, it will run the function.
+ 
+  The cookie value should be a pipe (`|`) delimited string containing wildcards, e.g.
+  `'MyApp.SomeUtil.*|MyApp.OtherUtil.Component.*'`
+ 
+  Log also provides additional features atop the regular Console API. Log can log the date and time of the log, and
+  the amount of milliseconds that have elapsed since the last log call. It will also log the namespace.
+ 
+  **Log example with all features enabled:**
+ 
+      [MyUtility.SomeComponent] [03-02-1970 12:00:00] [200ms] Hello world!
+ 
+  Some static methods are available that allow you to update the cookie. To enable calling this class from the console,
+  run the following (or add it to a bookmarklet):
+ 
+      require(['lib/temple/util/Log'], function(Log) { window.Log = Log.default; });
+ 
+  To improve your logging experience, enable
+  [Framework Blackboxing](https://developer.chrome.com/devtools/docs/blackboxing) for this library. This will show the
+  file and line number of the place the log method was called from, instead of linking to this library.
 
 
 ## Installation
