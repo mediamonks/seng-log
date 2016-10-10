@@ -49,7 +49,7 @@ the browser yourself, and grab one of the following files from the
 git clone git@github.com:mediamonks/seng-log.git
 cd seng-log
 npm i
-npm run build-dist
+npm run build:dist
 ```
 
 - **/dist/umd** (bundled with webpack)
@@ -58,6 +58,16 @@ npm run build-dist
 - **/dist/browser** (bundled with webpack, available as `window.SengLog`)
 - **/dist/system**
 - **/dist/es6**
+
+## Client Tests
+
+Make sure you include the script (bundled with webpack) in /example/index.html
+
+```
+npm run build:dev
+```
+
+You can test in: [http:localhost:8080](http:localhost:8080) 
 
 ## Usage
 
