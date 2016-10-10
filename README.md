@@ -1,6 +1,7 @@
 [![Travis](https://img.shields.io/travis/mediamonks/seng-log.svg?maxAge=2592000)](https://travis-ci.org/mediamonks/seng-log)
-[![Code Climate](https://img.shields.io/codeclimate/github/mediamonks/seng-log.svg?maxAge=2592000)](https://codeclimate.com/github/mediamonks/seng-log)
+[![Code Climate](https://codeclimate.com/github/mediamonks/seng-log/badges/gpa.svg)](https://codeclimate.com/github/mediamonks/seng-log)
 [![Coveralls](https://img.shields.io/coveralls/mediamonks/seng-log.svg?maxAge=2592000)](https://coveralls.io/github/mediamonks/seng-log?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/mediamonks/seng-log/badge.svg?branch=master)](https://coveralls.io/github/mediamonks/seng-log?branch=develop)
 [![npm](https://img.shields.io/npm/v/seng-log.svg?maxAge=2592000)](https://www.npmjs.com/package/seng-log)
 [![npm](https://img.shields.io/npm/dm/seng-log.svg?maxAge=2592000)](https://www.npmjs.com/package/seng-log)
 
