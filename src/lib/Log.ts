@@ -1,6 +1,7 @@
 import * as Cookies from 'js-cookie';
-import padStart from 'lodash/padStart';
+import * as padStart from 'lodash/padStart';
 import ILogFeatures from "./ILogFeatures";
+import * as globToRegExp from 'glob-to-regexp';
 
 /**
  * The name of the cookie to check
@@ -255,6 +256,7 @@ class Log
 	 */
 	public static removeNamespaceFromCookie(namespace:string):void
 	{
+
 		if(Log.getCookieValue() == void 0)
 		{
 			return;
@@ -386,7 +388,7 @@ class Log
 		{
 			// cache the cookie to prevent regenerating cookies on every log call
 			_cachedCookieValue = cookieValue;
-			//_cachedGlobRegExp = globToRegExp(`${cookieValue}`, {extended: true, flags: ['i']});
+			_cachedGlobRegExp = globToRegExp(`${cookieValue}`, {extended: true, flags: ['i']});
 		}
 
 		return _cachedGlobRegExp.test(namespace);

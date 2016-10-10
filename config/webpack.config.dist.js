@@ -9,8 +9,13 @@ module.exports = function()
 			extensions: ['', '.ts', '.js']
 		},
 
+		watch: true,
+		progress : true,
+		keepalive : true,
 		// entry is the "main" source file we want to include/import
-		entry: './src/bundle.ts',
+		entry: {
+			app: [path.resolve(__dirname, "../src/bundle.ts")],
+		},
 
 		// externals let you tell webpack about external dependencies
 		// that shouldn't be resolved by webpack.
@@ -34,7 +39,7 @@ module.exports = function()
 			// in the case of a "plain global browser library", this
 			// will be used as the reference to our module that is
 			// hung off of the window object.
-			library: "SengBoilerplate"
+			library: "SengLog"
 		},
 
 		module: {
