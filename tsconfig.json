@@ -14,7 +14,8 @@
     "outDir": "./"
   },
   "files": [
-    "./typings/index.d.ts",
+    "./definition/typings/index.d.ts",
+    "./definition/local/index.d.ts",
     "./src/index.ts",
     "./src/lib/Log.ts"
   ]

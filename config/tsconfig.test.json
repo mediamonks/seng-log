@@ -13,6 +13,7 @@
     "allowSyntheticDefaultImports": true
   },
   "files": [
-    "typings/index.d.ts"
+    "./definition/typings/index.d.ts",
+    "./definition/local/index.d.ts"
   ]
 }
