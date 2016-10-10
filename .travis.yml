@@ -17,15 +17,17 @@ after_script:
   - node_modules/.bin/coveralls < coverage/lcov.info
 
 deploy:
-  provider: npm
-  email: 'devmonk@mediamonks.com'
-  api_key:
-    secure: ''
-  on:
-    tags: true
-    node: '4'
-  skip_cleanup: true
-
+  - provider: npm
+    email: 'devmonk@mediamonks.com'
+    api_key:
+      secure: ''
+    on:
+      tags: true
+      node: '4'
+    skip_cleanup: true
+  - provider: releases
+    api_key:
+      secure: "LllCE2tMAPmhRI0JUbhgkI+UlfAPsnIqG38ysZFScgKQGZ5g+sUt1uVSydfLoX/RQNRbUkiWwieOagcwORPUJJdh2KjXEm/HWcqES/Q3V/8/JeWKa+G/E+2IPLGYba1EWWHyH3NIeNIcTvm50FxAQDJYRYPEq1cg1j0mb10kZu6QKTAqel8rgfVdxJSUsXENCG6CKu+Gbx07/IDws+mc/I4wl/hf3pDKoGp0bDw76yWpIYEy7LjrNfvjmkMHNspbqpRlEDL0NJkHKhh8XlEMTwxdCYopxHDce9adXnrnR5m2bkwLMU+sfcfskG2XyfUK6tk1i4t2uzk54ZDxnwm75yDgY3ceqo5orfnEgDhb6vegj1IPLhzhhDjQzWZd2v8duYSJqhzG+AVu4hYcC/V1lwBHceyE/mWs/G7aVZfCTQqZCOYm+O+JJ+j5AyWjSWrUV3fH98zAivhboe1GQUWq8UlPIW3Ke/icy0zDP8GuhuA1JJCPnaHjPuNjmazOvFvwJnNK5Pb/RB6Og1KpovoWTezfRDRxmt66EmHEA5NU8NXoIIO+foeZ+6tb5mn2BB3sZYbVxriRpJiA7Tecz7kV3j3sSDw2LWdX2krst0qD9EebAkivmHxRpuUfKgYggbKR+FTGEZ++302RfKcODShM1hhWj/rub6hYZc68h3DEAeA="
 addons:
   code_climate:
     repo_token:
