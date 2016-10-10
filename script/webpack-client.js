@@ -1,5 +1,6 @@
 const webpack = require("webpack");
 const webpackDevServer = require('webpack-dev-server');
+const path = require('path');
 
 var baseConfig = require('../config/webpack.config.dist');
 
@@ -9,6 +10,9 @@ browser.output.filename = "./dist/seng-log.js";
 browser.output.path = path.resolve(__dirname, '../dist');
 browser.output.publicPath = '/';
 browser.entry.app.unshift("webpack-dev-server/client?http://localhost:8080/");
+browser.watch = true;
+browser.progress = true;
+browser.keepalive = true;
 
 var compiler = webpack(browser);
 var server = new webpackDevServer(compiler, {

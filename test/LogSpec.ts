@@ -47,7 +47,6 @@ describe('Log', () =>
 		const L = new Log(namespace);
 		//const stub = sinon.spy(L, 'log');
 
-		console.log('oohh yes', L.log('T'));
 		it('slog method should be called', () =>
 		{
 			//L.log('T');

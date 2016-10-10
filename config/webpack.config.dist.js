@@ -9,9 +9,6 @@ module.exports = function()
 			extensions: ['', '.ts', '.js']
 		},
 
-		watch: true,
-		progress : true,
-		keepalive : true,
 		// entry is the "main" source file we want to include/import
 		entry: {
 			app: [path.resolve(__dirname, "../src/bundle.ts")],
