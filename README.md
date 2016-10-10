@@ -67,7 +67,7 @@ Make sure you include the script (bundled with webpack) in /example/index.html
 npm run build:dev
 ```
 
-You can test in: [http:localhost:8080](http:localhost:8080) 
+You can test in: [http://localhost:8080](http://localhost:8080) 
 
 ## Usage
 
